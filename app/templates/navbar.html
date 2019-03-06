@@ -1,0 +1,39 @@
+<div class="navbar navbar-light" role="navigation" style="margin-bottom:0; border-bottom: 1px solid;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand"> Company App</a>
+        </div>
+        <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/"><strong style="color:blue">Home</strong></a></li>
+                    <li><a href="{{url_for('main.accountancy')}}"><strong style="color:blue">Accountancy & management companies</strong></a></li>
+                    <li><a href="{{url_for('main.construction')}}"><strong style="color:blue">Construction</strong></a></li>
+                    <li><a href="{{url_for('main.designer')}}"><strong style="color:blue">Designer</strong></a></li>
+                    <li><a href="{{url_for('main.food')}}"><strong style="color:blue">Food processing and supply companies </strong></a></li>
+                    <li><a href="{{url_for('main.telecommunication')}}"><strong style="color:blue">Telecommunication</strong></a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    {% if current_user.is_authenticated %}
+                    <li><a href="{{url_for('main.new_company')}}"><strong style="color: blue">Add new Company</strong></a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{current_user.username| capitalize}} <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{url_for('main.user_companies',uname=current_user.username)}}">My Companies</a></li>
+                
+                    <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+                    {% else %}
+                    <li><a  href="{{url_for('auth.login')}}"><strong style="color:blue">Login</strong></a></li>
+                    <li><a href="{{url_for('main.subscriber')}}"><strong style="color:blue">Subscribe to the mailing list</strong></a></li>
+                  </ul>
+                  {% endif %}
+                </div>
+              </div>
+            </div>

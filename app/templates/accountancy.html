@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{%block content%}
+<div class="jumbotron text-center" style="background-color: dimgray; color: #fff">
+    <h1>Accountancy & management companies in Rwanda</h1>
+</div>
+<div class="container">
+    <hr>
+    <div class="row">
+        {{macro.displayCompanies(companies)}}
+    </div>
+</div>
+{%endblock%}

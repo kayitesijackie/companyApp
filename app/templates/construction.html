@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{%block content%}
+<div class="jumbotron text-center" style="background-color: dimgray; color: #fff">
+    <h1>Construction Companies</h1>
+</div>
+<div class="container">
+    <hr>
+    <div class="row">
+        {{macro.displayCompanies(companies)}}
+    </div>
+    <img src="http://rdb.rw/wp-content/uploads/2018/04/To-ease-the-challenges-in-the-construction-sector-the-Government-of-Rwanda-has-introduced-various-reforms-to-reduce-bureaucracy-in-obtaining-construction-permits.jpg">
+</div>
+{%endblock%}

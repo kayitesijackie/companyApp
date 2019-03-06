@@ -1,0 +1,39 @@
+{% macro displayCompanies(companies_list)%}
+    {%for company in companies_list%}
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
+            <div class="well well-lg">
+                <h4>{{company.name}}</h4>
+                <p>{{company.company_content| truncate(100)}}</p>
+                <p>Written by:  {{company.user.username}} <a href="/company/{{company.id}}" class="btn btn-primary pull-right">Read</a> </p>
+            </div>
+        </div>
+    {%endfor%}
+{%endmacro%}
+
+{%macro displayComments(comments_list)%}
+    {%for comment in comments_list%}
+        <div class="col-md-12">
+            <h5>{{comment.name}}</h5>
+            <p>{{comment.comment}}</p>
+            <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#deleteCommentModal">Delete Feedback</button>
+        </div>
+        <div class="modal fade" id="deleteCommentModal" tabindex="-1" role="dialog" aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteCommentModalLabel">Delete Company?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <form action="{{url_for('main.delete_comment', id=comment.id)}}" method="POST">
+                <input type="submit" class="btn btn-danger" value="Delete">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    {%endfor%}
+{%endmacro%}
