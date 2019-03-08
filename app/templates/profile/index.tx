@@ -1,0 +1,230 @@
+<!-- <body style="background-color:thistle"> -->
+    
+    <!-- {% extends 'base.html' %}
+    {% import 'macros.html' as macro %} -->
+
+    <!-- Content block -->
+    <!-- {%block content%}
+    <style>
+    .carousel-fade .carousel-inner .item {
+        -webkit-transition-property: opacity;
+        transition-property: opacity;
+      }
+      .carousel-fade .carousel-inner .item,
+      .carousel-fade .carousel-inner .active.left,
+      .carousel-fade .carousel-inner .active.right {
+        opacity: 0;
+      }
+      .carousel-fade .carousel-inner .active,
+      .carousel-fade .carousel-inner .next.left,
+      .carousel-fade .carousel-inner .prev.right {
+        opacity: 1;
+      }
+      .carousel-fade .carousel-inner .next,
+      .carousel-fade .carousel-inner .prev,
+      .carousel-fade .carousel-inner .active.left,
+      .carousel-fade .carousel-inner .active.right {
+        left: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+      }
+      .carousel-fade .carousel-control {
+        z-index: 2;
+      } 
+      
+      /*
+      Fade content bs-carousel with hero headers
+      Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
+      Image credits: unsplash.com
+      */
+      
+      /********************************/
+      /*       Fade Bs-carousel       */
+      /********************************/
+      .fade-carousel {
+          position: relative;
+          height: 100vh;
+      }
+      .fade-carousel .carousel-inner .item {
+          height: 100vh;
+      }
+      .fade-carousel .carousel-indicators > li {
+          margin: 0 2px;
+          background-color: #f39c12;
+          border-color: #f39c12;
+          opacity: .7;
+      }
+      .fade-carousel .carousel-indicators > li.active {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+      }
+      
+      /********************************/
+      /*          Hero Headers        */
+      /********************************/
+      .hero {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: 3;
+          color: #fff;
+          text-align: center;
+          text-transform: uppercase;
+          text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+            -webkit-transform: translate3d(-50%,-50%,0);
+               -moz-transform: translate3d(-50%,-50%,0);
+                -ms-transform: translate3d(-50%,-50%,0);
+                 -o-transform: translate3d(-50%,-50%,0);
+                    transform: translate3d(-50%,-50%,0);
+      }
+      .hero h1 {
+          font-size: 6em;    
+          font-weight: bold;
+          margin: 0;
+          padding: 0;
+      }
+      
+      
+      .fade-carousel .carousel-inner .item .hero {
+          opacity: 0;
+          -webkit-transition: 1s all ease-in-out 1s;
+             -moz-transition: 1s all ease-in-out 1s; 
+              -ms-transition: 1s all ease-in-out 1s; 
+               -o-transition: 1s all ease-in-out 1s; 
+                  transition: 1s all ease-in-out 1s; 
+      }
+      .fade-carousel .carousel-inner .item.active .hero {
+          opacity: 1;
+          -webkit-transition: 1s all ease-in-out 1s;
+             -moz-transition: 1s all ease-in-out 1s; 
+              -ms-transition: 1s all ease-in-out 1s; 
+               -o-transition: 1s all ease-in-out 1s; 
+                  transition: 1s all ease-in-out 1s;    
+      }
+      
+      /********************************/
+      /*            Overlay           */
+      /********************************/
+      .overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          background-color: #080d15;
+          opacity: 0.2;
+      }
+      
+      /********************************/
+      /*          Custom Buttons      */
+      /********************************/
+      .btn.btn-lg {padding: 10px 40px;}
+      .btn.btn-hero,
+      .btn.btn-hero:hover,
+      .btn.btn-hero:focus {
+          color: #f5f5f5;
+          background-color: #1abc9c;
+          border-color: #1abc9c;
+          outline: none;
+          margin: 20px auto;
+      }
+      
+      /********************************/
+      /*       Slides backgrounds     */
+      /********************************/
+      .fade-carousel .slides .slide-1, 
+      .fade-carousel .slides .slide-2,
+      .fade-carousel .slides .slide-3, 
+      .fade-carousel .slides .slide-4 {
+        height: 100vh;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+      .fade-carousel .slides .slide-1 {
+        background-image: url(http://rdb.rw/wp-content/uploads/2018/04/To-ease-the-challenges-in-the-construction-sector-the-Government-of-Rwanda-has-introduced-various-reforms-to-reduce-bureaucracy-in-obtaining-construction-permits.jpg); 
+      }
+      .fade-carousel .slides .slide-2 {
+        background-image: url(http://rwandabusinessdaily.com/wp-content/uploads/2018/08/MTN-Rwa-701x467.jpg);
+      }
+      .fade-carousel .slides .slide-3 {
+        background-image: url(http://umuryango.rw/IMG/arton29351.jpg?1513669786);
+      }
+      .fade-carousel .slides .slide-4 {
+        background-image: url(https://knnindia.co.in/uploads/newsfiles/Food-Processing-19-12-17.jpg);
+      }
+      
+      
+      /********************************/
+      /*          Media Queries       */
+      /********************************/
+      @media screen and (min-width: 980px){
+          .hero { width: 980px; }    
+      }
+      @media screen and (max-width: 640px){
+          .hero h1 { font-size: 4em; }    
+      }
+    </style>
+    <div class="container" style="background-color:indianred">
+        <div class="jumbotron">
+            <div class="panel" style="background-color:slategray; color: #fff; text-align: center" >
+                <h1>Rwanda Companies Directory</h1>        
+            </div>
+            <p>Your route into a new market can often be smoother when you have a local partner and this usually leads to higher levels of sales.</p>
+
+            <div class="carousel fade-carousel slide carousel-fade" data-ride="carousel" data-interval="5000" id="bs-carousel"> -->
+        <!-- Overlay -->
+        <!-- Indicators -->
+                <!-- <ol class="carousel-indicators">
+                    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#bs-carousel" data-slide-to="1"></li>
+                    <li data-target="#bs-carousel" data-slide-to="2"></li>
+                    <li data-target="#bs-carousel" data-slide-to="3"></li>
+                </ol> -->
+                <!-- Wrapper for slides -->
+                <!-- <div class="carousel-inner">
+                    <div class="item slides active carousel-item">
+                        <div class="slide-1">
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                    <div class="item slides carousel-item">
+                        <div class="slide-2">
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                    <div class="item slides carousel-item">
+                        <div class="slide-3">
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                    <div class="item slides carousel-item">
+                            <div class="slide-4">
+                                <div class="overlay"></div>
+                            </div>
+                        </div>
+                    <div class="hero">
+                        <hgroup>
+                            <h1>Rwanda Companies Directory</h1> 
+                            <h3>Register your company here after login in </h3>
+                        </hgroup>
+                        <button class="btn btn-hero btn-lg" role="button" ><a  href="{{url_for('auth.login')}}"><strong style="color:blue">Login</strong></a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+    </div>
+    {%endblock%}
+    </body>
+     -->
+       <!-- Call to action -->
+  <ul class="list-unstyled list-inline text-center py-2">
+    <li class="list-inline-item">
+      <h5 class="mb-1">Register for free</h5>
+    </li>
+    <li class="list-inline-item">
+      <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+    </li>
+  </ul>
+  <!-- Call to action -->

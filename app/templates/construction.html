@@ -1,15 +1,36 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 
-{%block content%}
-<div class="jumbotron text-center" style="background-color: dimgray; color: #fff">
-    <h1>Construction Companies</h1>
+{% block styles%} 
+<style>
+ .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:black;
+    font-size:30px;
+    font-weight:400;
+    color:white;
+    margin-bottom:50%;
+  }   
+</style>
+
+{% endblock %}
+{% block content %}
+<body>
+        <div class="jumbotron" style="height:60vh">
+        <img src="{{url_for('static', filename='construction.jpg')}}"  alt="Snow"  style="max-height: 100%; width: 100%; object-fit: cover">
+        <div class="centered">CONSTRUCTION COMPANIES</div>
 </div>
+
 <div class="container">
     <hr>
     <div class="row">
         {{macro.displayCompanies(companies)}}
     </div>
-    <img src="http://rdb.rw/wp-content/uploads/2018/04/To-ease-the-challenges-in-the-construction-sector-the-Government-of-Rwanda-has-introduced-various-reforms-to-reduce-bureaucracy-in-obtaining-construction-permits.jpg">
+    <!-- <img src="http://rdb.rw/wp-content/uploads/2018/04/To-ease-the-challenges-in-the-construction-sector-the-Government-of-Rwanda-has-introduced-various-reforms-to-reduce-bureaucracy-in-obtaining-construction-permits.jpg">
+    <img src="http://npd.co.rw/wp-content/uploads/2015/02/NPD-Profile-2015-FINAL-1-600x300.jpg"> -->
 </div>
+{% include 'footer.html' %}
 {%endblock%}

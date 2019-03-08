@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Company Directories</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      color:blue;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    /* footer {
+     
+      padding: 25px;
+      font-weight:500;
+    } */
+
+
+    section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #007b5e !important;
+}
+#footer h5{
+	padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+	padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+	font-size:30px;
+	margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#ffffff;
+}
+#footer ul.social li a:hover{
+	color:#eeeeee;
+}
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+
+@media (max-width:767px){
+	#footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+}
+</style>
+<section id="footer">
+        <div class="container">
+          <div class="row text-center text-xs-center text-sm-left text-md-left">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+              <h5>Quick links</h5>
+              <ul class="list-unstyled quick-links">
+                <li><a href="/"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                <li><a href=" "><i class="fa fa-angle-double-right"></i>About</a></li>
+                <li><a href=" "><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+             
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+              <h5>Quick links</h5>
+              <ul class="list-unstyled quick-links">
+                  <li><a href="/"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                  <li><a href=" "><i class="fa fa-angle-double-right"></i>companies</a></li>
+                  <li><a href=" "><i class="fa fa-angle-double-right"></i>categories</a></li>
+               
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+              <ul class="list-unstyled quick-links">
+                    <a href="{{url_for('main.subscriber')}}"  ><img src="{{url_for('static', filename='subscribe.png')}}" class="img-responsive" style="width:50%" alt="Image"></a>
+
+              </ul>
+            </div>
+          </div>
+         
+            </hr>
+          </div>	
+          <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+       <!-- Call to action -->
+       <ul class="list-unstyled list-inline text-center py-2">
+          <li class="list-inline-item">
+            <h5 class="mb-1">Register for free</h5>
+          </li>
+          <li class="list-inline-item">
+            <a href="{{url_for('auth.login')}}"class="btn btn-danger btn-rounded">Sign up!</a>
+          </li>
+        </ul>
+        <!-- Call to action -->
+      
+              <p><u><a href=" /">Company Directories</a></u> is a Registered at RDB</p>
+              <p class="h6">&copy All right Reversed.<a class="text-green ml-2" href=" " target="_blank">Company Directories</a></p>
+            </div>
+            </hr>
+          </div>	
+        </div>
+      </section>
+      <!-- ./Footer -->

@@ -1,14 +1,34 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 
-{%block content%}
-<div class="jumbotron text-center" style="background-color: dimgray; color: #fff">
-    <h1>Food processing and supply companies in Rwanda</h1>
+{% block styles%} 
+<style>
+ .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:black;
+    font-size:30px;
+    font-weight:400;
+    color:white;
+    margin-bottom:50%;
+  }   
+</style>
+
+{% endblock %}
+{% block content %}
+<body>
+<div class="jumbotron" style="height:60vh">
+        <img src="{{url_for('static', filename='food-processing2.jpg')}}"  alt="Snow"  style="max-height: 100%; width: 100%; object-fit: cover">
+        <div class="centered">FOOD PROCESSING COMPANIES</div>
 </div>
+
 <div class="container">
     <hr>
     <div class="row">
         {{macro.displayCompanies(companies)}}
     </div>
 </div>
+{% include 'footer.html' %}
 {%endblock%}

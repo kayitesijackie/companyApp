@@ -7,7 +7,7 @@ class CompanyForm(FlaskForm):
     text = TextAreaField('Campany',validators = [Required()])
     services=TextAreaField('Services and Products',validators = [Required()])
     contacts=TextAreaField('Contacts',validators = [Required()])
-    category = SelectField('Category', choices = [('accountancy', 'Accountancy'),('construction','Construction'), ('designer','Designer'),('food','Food Proccessing'), ('telecommunication','Telecommunication')], validators = [Required()])
+    category = SelectField('Category', choices = [('accountancy', 'Accountancy'),('construction','Construction'), ('designer','Designer'),('food','Food Proccessing'), ('telecommunication','Telecommunication'), ('others' , 'Others')], validators = [Required()])
     submit = SubmitField('Post')
 
 class UpdateProfile(FlaskForm):

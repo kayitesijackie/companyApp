@@ -14,8 +14,10 @@ def index():
     designer = Company.get_companies('designer')
     food = Company.get_companies('food')
     telecommunication = Company.get_companies('telecommunication')
+    others= Company.get_companies('others')
+    subscriber_form=SubscriberForm
     
-    return render_template('index.html', title = 'Company App - Home',accountancy=accountancy, construction = construction, designer = designer, food = food, telecommunication=telecommunication)
+    return render_template('index.html', title = 'Company App - Home',accountancy=accountancy, construction = construction, designer = designer, food = food, telecommunication=telecommunication, subscriber_form=subscriber_form, others = others)
 
 @main.route('/companies/accountancy')
 def accountancy():
@@ -50,6 +52,12 @@ def telecommunication():
     companies = Company.get_companies('telecommunication')
 
     return render_template('telecommunication.html',companies = companies)
+
+@main.route('/companies/others')
+def others():
+    companies = Company.get_companies('others')
+
+    return render_template('others.html',companies = companies)
 
 @main.route('/user/<uname>')
 def profile(uname):
@@ -108,9 +116,9 @@ def new_company():
         new_company.save_company()
 
         subscriber = Subscriber.query.all()
-        for email in subscriber:
+        # for email in subscriber:
             # mail_message("New Company Post from Company App! ","email/notification",email.email,subscriber=subscriber)
-            return redirect(url_for('main.index'))
+        return redirect(url_for('main.index'))
 
     title = 'New Company'
     return render_template('new_company.html', legend = legend, title = title, company_form = form)
